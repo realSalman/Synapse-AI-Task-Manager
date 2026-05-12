@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@theme {
+  --color-day: #000000;
+  --color-night: #000000;
+  --color-grey: #1a1a1a;
+  --color-dark: #000000;
+  --color-medium-grey: #888888;
+  --color-light-grey: #2a2a2a;
+  --color-main-purple: #ffffff;
+  --color-main-purple-hover: #e0e0e0;
+  
+  --background-image-purple-gradient: linear-gradient(135deg, #333333 0%, #111111 100%);
+}
+
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2a2a transparent;
+}
+
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--color-night);
+  color: white;
+}
+
+/* Typography */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+  color: white;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 23px;
+  color: white;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19px;
+  color: white;
+}
+
+h4 {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 2.4px;
+  color: var(--color-medium-grey);
+}
+
+div {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 23px;
+}
+
+a {
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Center's any element to the middle of the page */
+.page-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Spinner styling */
+.loader {
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 30px, 0 -30px;
+  border-radius: 4px;
+  background: currentColor;
+  display: block;
+  margin: -50px auto 0;
+  position: relative;
+  color: #fff;
+  transform: translateY(30px);
+  box-sizing: border-box;
+  animation: animloader 2s ease infinite;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 30px, 0 -30px;
+  border-radius: 4px;
+  background: currentColor;
+  color: #fff;
+  position: absolute;
+  left: 30px;
+  top: 0;
+  animation: animloader 2s 0.2s ease infinite;
+}
+.loader::before {
+  animation-delay: 0.4s;
+  left: 60px;
+}
+
+@keyframes animloader {
+  0% {
+    top: 0;
+    color: #ffffff;
+  }
+  50% {
+    top: 30px;
+    color: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    top: 0;
+    color: #ffffff;
+  }
+}
+
+.active {
+  color: white;
+}
+
+.active path {
+  fill: white;
+}
+
